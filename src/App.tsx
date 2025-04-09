@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error simply for the fact im not messing around with css files
 import './App.css';
 import Header from '@/components/Header';
 import Container from '@/components/Container';
