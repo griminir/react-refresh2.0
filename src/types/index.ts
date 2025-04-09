@@ -3,5 +3,4 @@ export type Puppy = {
   name: string;
   trait: string;
   imagePath: string;
-  liked: boolean;
 };
