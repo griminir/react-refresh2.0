@@ -1,5 +1,5 @@
 import { createContext, Dispatch, SetStateAction, use } from 'react';
-import { type Puppy } from '@/types';
+import type { Puppy } from '@/types';
 
 export const LikedContext = createContext<{
   liked: Puppy['id'][];

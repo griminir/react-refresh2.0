@@ -1,5 +1,5 @@
 import { Heart, X } from 'lucide-react';
-import { type Puppy } from '@/types';
+import type { Puppy } from '@/types';
 import { useLiked } from '@/context/Liked-Context.ts';
 
 type ShortListProps = {
