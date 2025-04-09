@@ -1,23 +1,21 @@
 import { Heart } from 'lucide-react';
-import { Dispatch, SetStateAction } from 'react';
 import type { Puppy } from '@/types';
+import { useContext } from 'react';
+import { LikedContext } from '@/context/Liked-Context';
 
 type LikeToggleProps = {
   puppyId: Puppy['id'];
-  liked: Puppy['id'][];
-  setLiked: Dispatch<SetStateAction<Puppy['id'][]>>;
 };
 
-export default function LikeToggle({
-  puppyId,
-  liked,
-  setLiked,
-}: LikeToggleProps) {
+export default function LikeToggle({ puppyId }: LikeToggleProps) {
+  const { liked, setLiked } = useContext(LikedContext)!;
   const handleLike = () => {
     if (liked.includes(puppyId)) {
-      setLiked((prev) => prev.filter((id) => id !== puppyId));
+      setLiked((prev: Puppy['id'][]) =>
+        prev.filter((id: Puppy['id']) => id !== puppyId),
+      );
     } else {
-      setLiked((prev) => [...prev, puppyId]);
+      setLiked((prev: Puppy['id'][]) => [...prev, puppyId]);
     }
   };
 

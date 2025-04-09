@@ -1,13 +1,10 @@
 import { type Puppy } from '@/types';
 import LikeToggle from './LikeToggle';
-import { Dispatch, SetStateAction } from 'react';
 
 type PuppyCardProps = {
   puppy: Puppy;
-  liked: Puppy['id'][];
-  setLiked: Dispatch<SetStateAction<Puppy['id'][]>>;
 };
-export default function PuppyCard({ puppy, liked, setLiked }: PuppyCardProps) {
+export default function PuppyCard({ puppy }: PuppyCardProps) {
   return (
     <li
       key={puppy.id}
@@ -24,7 +21,7 @@ export default function PuppyCard({ puppy, liked, setLiked }: PuppyCardProps) {
           <span className='text-slate-300'>·</span>
           <p className='text-slate-500'>{puppy.trait}</p>
         </div>
-        <LikeToggle puppyId={puppy.id} liked={liked} setLiked={setLiked} />
+        <LikeToggle puppyId={puppy.id} />
       </div>
     </li>
   );
