@@ -1,6 +1,6 @@
 import { Heart } from 'lucide-react';
 import type { Puppy } from '@/types';
-import { useContext } from 'react';
+import { use } from 'react';
 import { LikedContext } from '@/context/Liked-Context';
 
 type LikeToggleProps = {
@@ -8,7 +8,7 @@ type LikeToggleProps = {
 };
 
 export default function LikeToggle({ puppyId }: LikeToggleProps) {
-  const { liked, setLiked } = useContext(LikedContext)!;
+  const { liked, setLiked } = use(LikedContext)!;
   const handleLike = () => {
     if (liked.includes(puppyId)) {
       setLiked((prev: Puppy['id'][]) =>

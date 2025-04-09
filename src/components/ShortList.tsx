@@ -1,13 +1,13 @@
 import { Heart, X } from 'lucide-react';
 import { type Puppy } from '@/types';
-import { useContext } from 'react';
+import { use } from 'react';
 import { LikedContext } from '@/context/Liked-Context';
 
 type ShortListProps = {
   puppies: Puppy[];
 };
 export default function ShortList({ puppies }: ShortListProps) {
-  const { liked, setLiked } = useContext(LikedContext)!;
+  const { liked, setLiked } = use(LikedContext)!;
   return (
     <div>
       <h2 className='flex items-center gap-2 font-medium'>

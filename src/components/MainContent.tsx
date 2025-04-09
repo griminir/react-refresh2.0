@@ -12,14 +12,14 @@ export default function MainContent() {
 
   return (
     <main>
-      <LikedContext.Provider value={{ liked, setLiked }}>
+      <LikedContext value={{ liked, setLiked }}>
         <div className='mt-24 grid gap-8 sm:grid-cols-2'>
           <Search />
           <ShortList puppies={puppies} />
         </div>
         <PuppyList puppies={puppies} />
         <NewPuppyForm />
-      </LikedContext.Provider>
+      </LikedContext>
     </main>
   );
 }
