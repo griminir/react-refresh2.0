@@ -5,7 +5,7 @@ import NewPuppyForm from './puppiesComponents/NewPuppyForm';
 import { puppies } from '@/data/puppies';
 import { useState } from 'react';
 import { type Puppy } from '@/types';
-import { LikedContext } from '@/context/Liked-Context.ts';
+import { LikedContext } from '@/context/Liked-Context';
 
 export default function MainContent() {
   const [liked, setLiked] = useState<Puppy['id'][]>([1, 3]);
