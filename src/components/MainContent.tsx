@@ -13,7 +13,7 @@ export default function MainContent() {
     <main>
       <div className='mt-24 grid gap-8 sm:grid-cols-2'>
         <Search />
-        <ShortList puppies={puppies} liked={liked} />
+        <ShortList puppies={puppies} liked={liked} setLiked={setLiked} />
       </div>
       <PuppyList puppies={puppies} liked={liked} setLiked={setLiked} />
       <NewPuppyForm />
