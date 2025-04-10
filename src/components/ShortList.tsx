@@ -11,7 +11,7 @@ export default function ShortList({ puppies }: ShortListProps) {
     <div>
       <h2 className='flex items-center gap-2 font-medium'>
         <span>Your shortlist</span>
-        <Heart className='h-4 w-4 fill-pink-500 text-pink-500' />
+        <Heart className='fill-pink-500 text-pink-500' />
       </h2>
       <ul className='mt-4 flex flex-wrap gap-4'>
         {puppies
