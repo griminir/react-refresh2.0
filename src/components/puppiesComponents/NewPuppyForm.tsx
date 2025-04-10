@@ -1,7 +1,32 @@
-export default function NewPuppyForm() {
+import { Dispatch, SetStateAction } from 'react';
+import type { Puppy } from '@/types';
+
+type Props = {
+  puppies: Puppy[];
+  setPuppies: Dispatch<SetStateAction<Puppy[]>>;
+};
+export default function NewPuppyForm({ puppies, setPuppies }: Props) {
   return (
     <div className='mt-12 flex items-center justify-between bg-white p-8 shadow ring ring-black/5'>
-      <form className='mt-4 flex w-full flex-col items-start gap-4'>
+      <form
+        action={(formData: FormData) => {
+          const newPuppy: Puppy = {
+            id: puppies.length + 1,
+            name: formData.get('name') as string,
+            trait: formData.get('trait') as string,
+            imagePath: `images/${puppies.length + 1}.jpeg`,
+          };
+          setPuppies([...puppies, newPuppy]);
+        }}
+        // onSubmit={(e) => {
+        //   e.preventDefault();
+        //   const formData = new FormData(e.target);
+        //   const name = formData.get('name');
+        //   const trait = formData.get('trait');
+        //   console.log(Object.fromEntries(formData));
+        // }}
+        className='mt-4 flex w-full flex-col items-start gap-4'
+      >
         <div className='grid w-full gap-6 md:grid-cols-3'>
           <fieldset className='flex w-full flex-col gap-1'>
             <label htmlFor='name'>Name</label>
