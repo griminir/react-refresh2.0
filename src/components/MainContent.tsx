@@ -6,6 +6,7 @@ import { useState } from 'react';
 import type { Puppy } from '@/types';
 import { LikedContext } from '@/context/Liked-Context';
 import { puppies as puppiesData } from '@/data/puppies';
+import ApiPuppies from '@/components/puppiesComponents/ApiComponents/ApiPuppies.tsx';
 
 export default function MainContent() {
   const [liked, setLiked] = useState<Puppy['id'][]>([1, 3]);
@@ -14,6 +15,7 @@ export default function MainContent() {
 
   return (
     <main>
+      <ApiPuppies />
       <LikedContext value={{ liked, setLiked }}>
         <div className='mt-24 grid gap-8 sm:grid-cols-2'>
           <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
